@@ -1,0 +1,12 @@
+
+That project is part of the showcase platform for C++ projects.
+
+The random generation (in short, 'randgen') project contains a mere random
+generator, which makes use of the basic C++ class specified within the
+'combase' project.
+That simple component/project shows an example of how to import another
+component. For instance, CMake imports are showcased.
+
+That component/project is, in turn, needed by the "main" projects/components.
+
+
