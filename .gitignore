@@ -1,0 +1,5 @@
+tmp/
+/build
+/randgen/config/randgen-paths.hpp
+/test/randgen/*_utfresults.xml
+

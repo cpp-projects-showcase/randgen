@@ -1,4 +1,6 @@
 
+Summary:
+--------
 That project is part of the showcase platform for C++ projects.
 
 The random generation (in short, 'randgen') project contains a mere random
@@ -10,3 +12,45 @@ component. For instance, CMake imports are showcased.
 That component/project is, in turn, needed by the "main" projects/components.
 
 
+Building the library and test binary from Git repository:
+---------------------------------------------------------
+The Sourceforge Git repository may be cloned as following:
+git clone ssh://github.com/cpp-projects-showcase/randgen randgengit
+cd randgengit
+git checkout trunk
+
+Then, you need the following packages (Fedora/RedHat/CentOS names here, 
+but names may vary according to distributions):
+* cmake
+* gcc-c++
+* boost-devel
+* combase-devel
+* rpm-build (optional)
+
+
+Building the library and test binary from the tarball:
+------------------------------------------------------
+The latest stable source tarball (randgen*.tar.gz or .bz2) can be found here:
+https://github.com/cpp-projects-showcase/randgen/downloads
+
+Then, as usual:
+* To configure the project, type something like:
+  mkdir build && cd build
+  cmake -DCMAKE_INSTALL_PREFIX=/home/user/dev/deliveries/randgen-99.99.99 \
+   -DWITH_COMBASE_PREFIX=/home/user/dev/deliveries/combase-stable \
+   -DCMAKE_BUILD_TYPE:STRING=Debug -DENABLE_TEST:BOOL=ON ..
+* To build the project, type:
+  make
+* To test the project, type:
+  make check
+* To install the library (librandgen*.so*), just type:
+  make install
+* To package the source files, type:
+  make dist
+* To package the binary:
+  make package
+* To check the installation:
+  /home/user/dev/deliveries/randgen-99.99.99/bin/randgen-config --help
+
+
+(Denis Arnaud, January 2012)

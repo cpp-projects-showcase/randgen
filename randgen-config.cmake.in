@@ -1,0 +1,21 @@
+#
+# Config file for the Randgen package. It defines the following variables:
+#  RANDGEN_VERSION      - version of Randgen
+#  RANDGEN_BINARY_DIRS  - binary directories for Randgen
+#  RANDGEN_INCLUDE_DIRS - include directories for Randgen
+#  RANDGEN_LIBRARY_DIRS - library directories for Randgen (normally not used!)
+#  RANDGEN_LIBRARIES    - libraries to link against
+#  RANDGEN_EXECUTABLES  - the randgen binaries/executables
+
+# Tell the user project where to find the headers and libraries
+set (RANDGEN_VERSION "@PACKAGE_VERSION@")
+set (RANDGEN_BINARY_DIRS "@RANDGEN_BIN_DIR@")
+set (RANDGEN_INCLUDE_DIRS "@RANDGEN_INCLUDE_DIRS@")
+set (RANDGEN_LIBRARY_DIRS "@RANDGEN_LIB_DIR@")
+
+# Our library dependencies (contains definitions for IMPORTED targets)
+include ("@RANDGEN_CMAKE_DIR@/randgen-library-depends.cmake")
+
+# These are IMPORTED targets created by randgen-library-depends.cmake
+set (RANDGEN_LIBRARIES randgenlib)
+set (RANDGEN_EXECUTABLES randgen)

@@ -1,0 +1,26 @@
+prefix=@prefix@
+exec_prefix=${prefix}
+bindir=${exec_prefix}/bin
+libdir=${exec_prefix}/lib@LIB_SUFFIX@
+libexecdir=${exec_prefix}/libexec
+sbindir=${exec_prefix}/sbin
+sysconfdir=${prefix}/etc
+includedir=${prefix}/include
+datarootdir=${prefix}/share
+datadir=${datarootdir}
+pkgdatadir=${datarootdir}/@PACKAGE@
+docdir=${datarootdir}/doc/@PACKAGE@-@PACKAGE_VERSION@
+mandir=${datarootdir}/man
+infodir=${datarootdir}/info
+htmldir=${docdir}/html
+pdfdir=${docdir}/html
+pkgincludedir=${includedir}/@PACKAGE@
+pkglibdir=${libdir}/@PACKAGE@
+pkglibexecdir=${libexecdir}/@PACKAGE@
+
+Name: @PACKAGE_PRETTY_NAME@
+Description: @PACKAGE_BRIEF@
+Version: @PACKAGE_VERSION@
+URL: http://github.com/cpp-projects-showcase/@PACKAGE@/
+Libs: -L${libdir} -l@PACKAGE@ @LDFLAGS@ @LIBS@
+Cflags: -I${includedir}
